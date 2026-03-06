@@ -36,14 +36,14 @@ ls data/raw
 
 mkdir -p data/processed/server_logs
 mkdir -p data/processed/user_logs
-mkdir -p data/processed/user_logs
+mkdir -p data/processed/event_logs
 
 cp data/raw/*server*.log data/processed/server_logs/
 cp data/raw/*user*.log data/processed/user_logs/
 cp data/raw/*event*.log data/processed/event_logs/
 
 rm data/raw/*ipaddr*
-rm data/processed/user_logs/*ipaddr*
+rm data/processed/event_logs/*ipaddr*
 
 find data/processed -type f > data/inventory.txt
 
