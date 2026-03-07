@@ -39,13 +39,13 @@ mkdir -p data/processed/server_logs
 mkdir -p data/processed/user_logs
 mkdir -p data/processed/event_logs
 # 5. Copy all server log files
-find data/raw -type f -name "*server*. log" -exec cp () data/processed/server_logs/ \;
+cp data/raw/*server*.log data/processed/server_logs/
 # 6. Copy user logs and event Logs
-find data/raw -type f -name "*user*.log" -exec cp () data/processed/user_logs/ \;
-find data/raw type f -name "*event*.log" -exec cp ()) data/processed/event_logs/ \;
+cp data/raw/*user*.log data/processed/user_logs/
+cp data/raw/*event*.log data/processed/event_logs/
 # 7. Remove all files containing
-find data/raw -type f -name "*ipaddr*" -delete 
-find data/processed/user_logs -type f -name "*ipaddr" -delete
+rm data/raw/*ipaddr*
+rm data/processed/user_logs/*ipaddr*
 # 8. Create inventory file listing all files in processed folders
 find data/processed -type f > data/inventory.txt
 ###########################################
